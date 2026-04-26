@@ -50,7 +50,7 @@ namespace GridMap.Shapes
             for (int i = 0; i < 5; i++)
             {
                 vertex = new PointF(vertex.X + (float)(side * Math.Cos(vectorAngle)), vertex.Y + (float)(side * Math.Sin(vectorAngle)));
-                vectorAngle -= Math.PI / 3;
+                vectorAngle += Math.PI / 3;
                 vertices.Add(vertex);
             }
             return vertices;
@@ -58,7 +58,7 @@ namespace GridMap.Shapes
 
         private static PointF CalculateStartVertex(PointF center, double radius, double rotation)
         {
-            double radiusAngle = 2 * Math.PI / 3 + rotation;
+            double radiusAngle = -2 * Math.PI / 3 + rotation;
             PointF vertex = new PointF(center.X + (float)(radius * Math.Cos(radiusAngle)), center.Y + (float)(radius * Math.Sin(radiusAngle)));
             return vertex;
         }
